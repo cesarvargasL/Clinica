@@ -11,9 +11,9 @@ Listar pacientesss
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Column 1</th>
-                <th scope="col">Column 2</th>
-                <th scope="col">Column 3</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Detalle</th>
             </tr>
         </thead>
         <tbody>
