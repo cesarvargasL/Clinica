@@ -1,10 +1,14 @@
 <?php include ("../../templates/header.php"); ?>
 
-Listar pacientesss
-
+<br/>
+<h1>Pacientes</h1>
 <div class="card">
     <div class="card-header">
-        Pacientes
+
+        <a name="" id="" class="btn btn-primary" 
+        href="crear.php" role="button">
+        Agregar registro
+    </a>
     </div>
     <div class="card-body">
 <div class="table-responsive-sm">
@@ -14,6 +18,7 @@ Listar pacientesss
                 <th scope="col">Nombre</th>
                 <th scope="col">Fotos</th>
                 <th scope="col">Hora de Consulta</th>
+                <th scope="col">Fecha de Consulta</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
@@ -22,7 +27,11 @@ Listar pacientesss
                 <td scope="row">Juaquin Quiroga</td>
                 <td>imagen.jpg</td>
                 <td>14:00</td>
-                <td>Historial|Editar|Eliminar</td>
+                <td>11/06/2022</td>
+                <td>
+                    <a name="" id="" class="btn btn-primary" href="#" role="button">Historial</a>
+                |<a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
+                |<a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a></td>
             </tr>
         </tbody>
     </table>
