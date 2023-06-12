@@ -12,11 +12,11 @@
            <div class="mb-3">
            <label for="usuario" class="primernombre">Nombre del usuario:</label>
            <input type="text"
-               class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="nombre del usuario">
+               class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Nombre del usuario">
            </div>
            
            <div class="mb-3">
-             <label for="password" class="form-label">Comtraseña</label>
+             <label for="password" class="form-label">Contraseña</label>
              <input type="password"
                class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Escriba su contraseña">
              

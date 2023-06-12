@@ -1,7 +1,7 @@
 <?php
 
 $servidor="localhost"; //
-$baseDeDatos="CLINICA";
+$baseDeDatos="Consultorio";
 $usuario="root";
 $contrasenia="";
 

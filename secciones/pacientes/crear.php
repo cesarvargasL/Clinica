@@ -11,7 +11,7 @@
         <form action="" method="post" enctype="multipart/form/data">
            
         <div class="mb-3">
-        <label for="" class="primernombre">Primer nombre</label>
+        <label for="primernombre" class="form-label">Primer nombre</label>
         <input type="text"
             class="form-control" name="primernombre" id="primernombre" aria-describedby="helpId" placeholder="Primer nombre">
         </div>
@@ -34,6 +34,11 @@
             class="form-control" name="segundoapellido" id="segundoapellido" aria-describedby="helpId" placeholder="Segundo Apellido">
         </div>
 
+        <div class="mb-3">
+          <label for="ci" class="form-label">CI</label>
+          <input type="text"
+            class="form-control" name="segundoapellido" id="ci" aria-describedby="helpId" placeholder="12345678">
+        </div>
         <div class="mb-3">
           <label for="" class="form-label">Foto:</label>
           <input type="file"
