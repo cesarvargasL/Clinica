@@ -16,6 +16,7 @@
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
+                <th scope="col">CI</th>
                 <th scope="col">Fotos</th>
                 <th scope="col">Hora de Consulta</th>
                 <th scope="col">Fecha de Consulta</th>
@@ -25,11 +26,12 @@
         <tbody>
             <tr class="">
                 <td scope="row">Juaquin Quiroga</td>
+                <td>12345678</td>
                 <td>imagen.jpg</td>
                 <td>14:00</td>
                 <td>11/06/2022</td>
                 <td>
-                    <a name="" id="" class="btn btn-primary" href="#" role="button">Historial</a>
+                    <a name="" id="" class="btn btn-primary" href="../../secciones/historial/index.php" role="button">Historial</a>
                 |<a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
                 |<a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a></td>
             </tr>
