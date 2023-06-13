@@ -1,4 +1,14 @@
-<?php include ("../../templates/header.php"); ?>
+<?php 
+include('conexion.php');
+include ("../../templates/header.php"); 
+
+$sql = "SELECT * FROM pacientes";
+
+// echo $sql;
+
+$resultado = $con->query($sql);
+?>
+
 
 <br/>
 <h1>Pacientes</h1>
@@ -24,16 +34,19 @@
             </tr>
         </thead>
         <tbody>
+        <?php while ($row = $resultado->fetch_assoc()) {?>
             <tr class="">
-                <td scope="row">Juaquin Quiroga</td>
-                <td>12345678</td>
+                <td scope="row"><?php echo $row['primernombre'] ?> </td>
+                <td><?php echo $row['ci'] ?></td>
                 <td>imagen.jpg</td>
-                <td>14:00</td>
-                <td>11/06/2022</td>
+                <td><?php echo $row['horadeconsulta'] ?></td>
+                <td><?php echo $row['fechadeconsulta'] ?></td>
                 <td>
-                    <a name="" id="" class="btn btn-primary" href="../../secciones/historial/index.php" role="button">Historial</a>
-                |<a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
-                |<a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                    <a name="" id="" class="btn btn-primary" href="../../secciones/historial/index.php?id=<?php echo $row['id']; ?>" role="button">Historial</a>
+                    <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
+                    <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+        <?php } ?>
+
             </tr>
         </tbody>
     </table>

@@ -1,4 +1,16 @@
-<?php include ("../../templates/header.php"); ?>
+<?php 
+include ("../../templates/header.php"); 
+include ("conexion.php");
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM historial WHERE id = $id";
+// $sql2 = "SELECT * FROM tabla2";
+
+$resultado = $con->query($sql);
+// $resultado2 = $con->query($sql2);
+?>
+
 
 <br/>
 <h1>Historial</h1>
@@ -30,11 +42,13 @@
             </tr>
         </thead>
         <tbody>
+        <?php while ($row = $resultado->fetch_assoc()) {?>
             <tr class="">
-                <td scope="row">Juaquin</td>
-                <td>Juan</td>
-                <td>Quiroga</td>
-                <td>Cruz</td>
+                <td scope="row"><?php echo $row['primernombre'] ?></td>
+                <td><?php echo $row['segundonombre'] ?></td>
+                <td><?php echo $row['primerapellido'] ?></td>
+                <td><?php echo $row['segundoapellido'] ?></td>
+
             </tr>
         </tbody>
     </table>
@@ -53,10 +67,9 @@
         </thead>
         <tbody>
             <tr class="">
-                <td scope="row">Av. Jaime Mendoza</td>
-                
-                <td>Chuquisaca</td>
-                <td>Sucre</td>
+                <td scope="row"><?php echo $row['segundoapellido'] ?></td>
+                <td><?php echo $row['lugardenacimiento'] ?></td>
+                <td><?php echo $row['procedencia'] ?></td>
             </tr>
         </tbody>
     </table>
@@ -76,11 +89,11 @@
         </thead>
         <tbody>
             <tr class="">
-                <td scope="row">Estudiante</td>
-                <td>12345678</td>
-                <td>Soltero</td>
-                <td>20</td>
-                <td>Masculino</td>
+                <td scope="row"><?php echo $row['ocupacion'] ?></td>
+                <td><?php echo $row['ci'] ?></td>
+                <td><?php echo $row['estadocivil'] ?></td>
+                <td><?php echo $row['edad'] ?></td>
+                <td><?php echo $row['sexo'] ?></td>
             </tr>
         </tbody>
     </table>
@@ -110,9 +123,10 @@
         </thead>
         <tbody>
             <tr class="">
-                <td scope="row">Diabetes</td>
-                <td>Gastritis</td>
-                <td>Ninguno</td>
+                <td scope="row"><?php echo $row['hereditariosyfamiliares'] ?></td>
+                <td><?php echo $row['personalespatologicos'] ?></td>
+                <td><?php echo $row['personalesnopatologicos'] ?></td>
+        <?php } ?>
             </tr>
         </tbody>
     </table>
