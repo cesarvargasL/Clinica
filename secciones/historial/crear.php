@@ -1,33 +1,84 @@
-<?php
-include ("../../templates/header.php");
-include ("conexion.php");
+<?php include ("../../templates/header.php"); ?>
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Obtener los valores enviados desde el formulario
-    $primernombre = $_POST['primernombre'];
+<br/>
+<h3>Datos personales</h3>
+<form class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Primer Nombre</label>
+    <input type="email" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Segundo Nombre</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Primer apellido</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Segundo apellido</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div>
 
-    // Preparar la consulta preparada
-    $sql = "INSERT INTO historial (primernombre) VALUES (?)";
+<div class="col-md-6">
+    <label for="inputCity" class="form-label">Direccion</label>
+    <input type="text" class="form-control" id="inputCity">
+  </div>
 
-    // Preparar la declaración
-    $stmt = mysqli_prepare($con, $sql);
 
-    // Vincular los parámetros y sus tipos de datos
-    mysqli_stmt_bind_param($stmt, 's', $primernombre);
+  <div class="col-md-3">
+    <label for="inputState" class="form-label">Lugar de nacimiento</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+  <div class="col-md-3">
+    <label for="inputZip" class="form-label">Procedencia</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+  <div class="col-md-4">
+    <label for="inputZip" class="form-label">Ocupación</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+  <div class="col-md-2">
+    <label for="inputCity" class="form-label">CI</label>
+    <input type="text" class="form-control" id="inputCity">
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Estado civil</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Edad</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Sexo</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
 
-    // Ejecutar la consulta
-    if (mysqli_stmt_execute($stmt)) {
-        // La inserción se realizó correctamente
-        echo "Datos insertados correctamente";
-    } else {
-        // Hubo un error en la inserción
-        echo "Error al insertar los datos: " . mysqli_error($con);
-    }
+  <h3>Antecedentes</h3>
 
-    // Cerrar la declaración y la conexión
-    mysqli_stmt_close($stmt);
-    mysqli_close($con);
-}
-?>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Hereditarios y familiares</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Personales patológicos</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Personales no patológicos</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="col-12">
+    <a name="" id="" class="btn btn-primary" 
+        href="../../secciones/consultas/crear.php" role="button">
+        Agregar consulta
+    </a>
+</br>
+</br>
+</div>
+  </div>
 
-<!-- Resto del código HTML -->
+  </form>
+
+<?php include ("../../templates/footer.php"); ?>

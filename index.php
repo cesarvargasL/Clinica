@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <title>Consultorio de Fisioterapia</title>
@@ -38,7 +37,6 @@
             border-radius: 5px;
             margin-bottom: 10px;
         }
-
         input[type="submit"] {
             background-color: #333;
             color: #fff;
@@ -78,7 +76,7 @@
 
         <label>Correo electrónico:</label>
         <input type="email" name="correo" required><br>
-
+        
         <label>Contraseña:</label>
         <input type="password" name="contrasena" required><br>
 
@@ -87,7 +85,7 @@
 
     <h2>O si ya se encuentra registrado:</h2>
     <ul>
-        <li><a href="loging.php">Iniciar Sesión</a></li>
+        <li><a href="login.php">Iniciar Sesión</a></li>
     </ul>
 </body>
 </html>

@@ -34,9 +34,9 @@ $url_base="http://localhost/Clinica/";
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $url_base;?>secciones/usuarios/">Usuarios</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="<?php echo $url_base;?>secciones/puestos/">Puestos</a>
-            </li>
+            </li> -->
             <li class="nav-item">
 
                 <a class="nav-link" href="#">Cerrar Sesion</a>
