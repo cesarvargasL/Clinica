@@ -1,6 +1,6 @@
 <?php
 $db_host = "localhost";
-$db_nombre = "consultorioFisioterapia";
+$db_nombre = "consultoriofisioterapia";
 $db_usuario = "root";
 $db_contrasena = "";
 

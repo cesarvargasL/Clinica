@@ -11,7 +11,7 @@ $resultado = $conn->query($sql);
 
 if ($resultado->num_rows === 1) {
     $_SESSION['correo'] = $correo;
-    header("Location: header.php");
+    header("Location: secciones/sistema/index.php");
 } else {
     echo "Correo electrónico o contraseña incorrectos.";
 }

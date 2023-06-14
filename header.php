@@ -23,11 +23,13 @@ $url_base="http://localhost/Clinica/";
   <!-- place navbar here -->
   </header>
 
+  <body background="sistemainicio.png">
+</body>
 
   <nav class="navbar navbar-expand navbar-light bg-light">
         <ul class="nav navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="#" aria-current="page">Sistema Web <span class="visually-hidden">(current)</span></a>
+                <a class="nav-link active" href="<?php echo $url_base;?>secciones/sistema/" aria-current="page">Sistema Web <span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $url_base;?>secciones/pacientes/">Pacientes</a>
