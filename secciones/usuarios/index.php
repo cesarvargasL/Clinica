@@ -1,4 +1,13 @@
-<?php include ("../../templates/header.php"); ?>
+<?php 
+include('conexion.php');
+include ("../../templates/header.php"); 
+
+$sql = "SELECT * FROM doctores";
+
+//echo $sql;
+
+$resultado = $conn->query($sql);
+?>
 
 <br/>
 <h1>Usuarios</h1>
@@ -29,11 +38,12 @@
                             echo "<td>" . $row['nombre'] . "</td>";
                             // echo "<td>" . $row['contrasena'] . "</td>";
                             echo "<td>" . $row['correo'] . "</td>";
-                            echo '<td>
-                                    <input name="btneditar" id="btneditar" class="btn btn-info" type="button" value="Editar">
-                                    <input name="btnborrar" id="btnborrar" class="btn btn-danger" type="button" value="Eliminar">
-                                  </td>';
-                            echo "</tr>";
+                            ?><td>
+                                    <a name="btneditar" id="btneditar" class="btn btn-info" href="../../secciones/usuarios/editar.php?id=<?php echo $row['id']; ?>" role="button">Editar</a>
+                                    <a name="btnborrar" id="btnborrar" class="btn btn-danger" href="../../secciones/usuarios/delete.php?id=<?php echo $row['id']; ?>" role="button">Eliminar</a>
+                                  </td>
+                             </tr>
+                             <?php
                         }
 } else {
                         echo "<tr><td colspan='3'>No hay registros</td></tr>";

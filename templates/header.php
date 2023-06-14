@@ -39,7 +39,7 @@ $url_base="http://localhost/Clinica/";
             </li> -->
             <li class="nav-item">
 
-                <a class="nav-link" href="#">Cerrar Sesion</a>
+                <a class="nav-link" href="../../index.php">Cerrar Sesion</a>
             </li>
         </ul>
     </nav>

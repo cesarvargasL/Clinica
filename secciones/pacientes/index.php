@@ -40,14 +40,14 @@ $resultado = $con->query($sql);
             <tr class="">
                 <td scope="row"><?php echo $row['primernombre'] ?> </td>
                 <td><?php echo $row['ci'] ?></td>
-                <td>imagen.jpg</td>
+                <!-- <td>imagen.jpg</td> -->
                 <td><?php echo $row['fecha_consulta'] ?></td>
                 <td><?php echo $row['horaconsulta'] ?></td>
                  
                 <td>
                     <a name="" id="" class="btn btn-primary" href="../../secciones/historial/index.php?id=<?php echo $row['id']; ?>" role="button">Historial</a>
-                    <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
-                    <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                    <a name="" id="" class="btn btn-info" href="../../secciones/pacientes/editar.php?id=<?php echo $row['id']; ?>" role="button">Editar</a>
+                    <a name="" id="" class="btn btn-danger" href="../../secciones/pacientes/delete.php?id=<?php echo $row['id']; ?>" role="button">Eliminar</a></td>
         <?php } ?>
 
             </tr>
