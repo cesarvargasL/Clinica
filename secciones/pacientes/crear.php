@@ -1,67 +1,151 @@
-<?php include ("../../templates/header.php"); ?>
+<?php 
+session_start();
+if (!isset($_SESSION['correo'])) {
+    header("Location: login.php");
+    exit();
+}
 
-<br/>
+include 'conexion.php';
 
-<div class="card">
-    <div class="card-header">
-        Datos del paciente
-    </div>
-    <div class="card-body">
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $primernombre = $_POST['primernombre'];
+    $segundonombre = $_POST['segundonombre'];
+    $primerapellido = $_POST['primerapellido'];
+    $segundoapellido = $_POST['segundoapellido'];
+    $direccion = $_POST['direccion'];
+    $lugardenacimiento = $_POST['lugardenacimiento'];
+    $ocupacion = $_POST['ocupacion'];
+    $ci = $_POST['ci'];
+    $estadocivil = $_POST['estadocivil'];
+    $edad = $_POST['edad'];
+    $sexo = $_POST['sexo'];
+    $foto = $_POST['foto'];
+    $horadeconsulta = $_POST['horadeconsulta'];
+    $fechaConsulta = $_POST["fecha_consulta"];
+    $fechaNacimiento = $_POST['fecha_nacimiento'];
+    $telefono = $_POST['telefono'];
+    $motivoConsulta = $_POST["motivo_consulta"];
 
-        <form action="" method="post" enctype="multipart/form/data">
-           
-        <div class="mb-3">
-        <label for="primernombre" class="form-label">Primer nombre</label>
-        <input type="text"
-            class="form-control" name="primernombre" id="primernombre" aria-describedby="helpId" placeholder="Primer nombre">
-        </div>
 
-        <div class="mb-3">
-          <label for="segundonombre" class="form-label">Segundo nombre</label>
-          <input type="text"
-            class="form-control" name="segundonombre" id="segundonombre" aria-describedby="helpId" placeholder="Segundo nombre">
-        </div>
+    $sql = "INSERT INTO pacientes (primernombre, segundonombre, primerapellido, segundoapellido, direccion, lugardenacimiento, ocupacion, ci, estadocivil, edad, sexo, foto, horadeconsulta, fecha_consulta, fecha_nacimiento, telefono, motivo_consulta) VALUES ('$primernombre', '$segundonombre', '$primerapellido', '$segundoapellido', '$direccion', '$lugardenacimiento', '$ocupacion', ' $ci', '$estadocivil', '$edad', '$sexo', '$foto', '$horadeconsulta', '$fechaConsulta', '$fechaNacimiento', '$telefono', '$motivoConsulta')";
 
-        <div class="mb-3">
-          <label for="primerapellido" class="form-label">Primer apellido</label>
-          <input type="text"
-            class="form-control" name="primerapellido" id="primerapellido" aria-describedby="helpId" placeholder="Primer apellido">
-        </div>
+    
+}
+?>
 
-        <div class="mb-3">
-          <label for="segundoapellido" class="form-label">Segundo apellido</label>
-          <input type="text"
-            class="form-control" name="segundoapellido" id="segundoapellido" aria-describedby="helpId" placeholder="Segundo Apellido">
-        </div>
+<html>
+<head>
+    <title>Consultorio de Fisioterapia - Agregar Paciente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-        <div class="mb-3">
-          <label for="ci" class="form-label">CI</label>
-          <input type="text"
-            class="form-control" name="segundoapellido" id="ci" aria-describedby="helpId" placeholder="12345678">
-        </div>
-        <div class="mb-3">
-          <label for="" class="form-label">Foto:</label>
-          <input type="file"
-            class="form-control" name="foto" id="foto" aria-describedby="helpId" placeholder="">
-        </div>
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
 
-        <div class="mb-3">
-          <label for="horadeconsulta" class="form-label">Hora de consulta</label>
-          <input type="time" class="form-control" name="horadeconsulta" id="horadeconsulta" aria-describedby="emailHelpId" placeholder="Hora de consulta">
-        </div>
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-        <div class="mb-3">
-          <label for="fechadeconsulta" class="form-label">Fecha de consulta</label>
-          <input type="date" class="form-control" name="fechadeconsulta" id="fechadeconsulta" aria-describedby="emailHelpId" placeholder="Hora de consulta">
-        </div>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
 
-        <button type="submit" class="btn btn-success">Agregar Paciente</button>
-        <a name="" id="" class="btn btn-primary" href="index.php" role="button">Cancelar</a>
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
 
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Agregar Paciente</h1>
+
+    <form action="crear.php" method="post">
+        <label>Nombre:</label>
+        <input type="text" name="primernombre" required><br>
+
+        <label>Segundo nombre:</label>
+        <input type="text" name="segundonombre" required><br>
+
+        <label>Primer appellido:</label>
+        <input type="text" name="primerapellido" required><br>
+
+        <label>segundoapellido:</label>
+        <input type="text" name="segundoapellido" required><br>
+
+        <label>Dirección:</label>
+        <input type="text" name="direccion" required><br>
+
+        <label>lugardenacimiento:</label>
+        <input type="text" name="lugardenacimiento" required><br>
+
+        <label>ocupacion:</label>
+        <input type="text" name="ocupacion" required><br>
+
+        <label>ci:</label>
+        <input type="text" name="ci" required><br>
+
+        <label>estadocivil:</label>
+        <input type="text" name="estadocivil" required><br>
+
+        <label>edad:</label>
+        <input type="text" name="edad" required><br>
+
+        <label>sexo:</label>
+        <input type="text" name="sexo" required><br>
+
+        <label>foto:</label>
+        <input type="text" name="foto" required><br>
+
+        <label>Hora de consulta:</label>
+        <input type="time" name="horadeconsulta" required><br>
+
+        <label>Fecha de Consulta:</label>
+        <input type="date" name="fecha_consulta" required><br>
+
+        <label>Fecha de Nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" required><br>
+
+        <label>Teléfono:</label>
+        <input type="text" name="telefono" required><br>
+
+        <label>Motivo de Consulta:</label>
+        <textarea name="motivo_consulta" required></textarea><br>
+        
+        <input type="submit" value="Agregar Paciente">
     </form>
+</body>
+</html>
 
-    </div>
-    <div class="card-footer text-muted"></div>
-</div>
 
-<?php include ("../../templates/footer.php"); ?>
+

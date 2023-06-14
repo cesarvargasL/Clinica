@@ -28,9 +28,10 @@ $resultado = $con->query($sql);
                 <th scope="col">Nombre</th>
                 <th scope="col">CI</th>
                 <th scope="col">Fotos</th>
-                <th scope="col">Hora de Consulta</th>
                 <th scope="col">Fecha de Consulta</th>
+                <th scope="col">Motivo de Consulta</th>
                 <th scope="col">Acciones</th>
+
             </tr>
         </thead>
         <tbody>
@@ -39,8 +40,9 @@ $resultado = $con->query($sql);
                 <td scope="row"><?php echo $row['primernombre'] ?> </td>
                 <td><?php echo $row['ci'] ?></td>
                 <td>imagen.jpg</td>
-                <td><?php echo $row['horadeconsulta'] ?></td>
-                <td><?php echo $row['fechadeconsulta'] ?></td>
+                <td><?php echo $row['fecha_consulta'] ?></td>
+                <td><?php echo $row['motivo_consulta'] ?></td>
+                 
                 <td>
                     <a name="" id="" class="btn btn-primary" href="../../secciones/historial/index.php?id=<?php echo $row['id']; ?>" role="button">Historial</a>
                     <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
