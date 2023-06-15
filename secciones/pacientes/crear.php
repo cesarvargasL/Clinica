@@ -13,19 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $segundonombre = $_POST['segundonombre'];
     $primerapellido = $_POST['primerapellido'];
     $segundoapellido = $_POST['segundoapellido'];
-    $direccion = $_POST['direccion'];
-    $lugardenacimiento = $_POST['lugardenacimiento'];
-    $ocupacion = $_POST['ocupacion'];
     $ci = $_POST['ci'];
-    $estadocivil = $_POST['estadocivil'];
-    $edad = $_POST['edad'];
-    $sexo = $_POST['sexo'];
-    //$foto = $_POST['foto'];
-    $horadeconsulta = $_POST['horaconsulta'];
-    $fechaConsulta = $_POST["fecha_consulta"];
-    $fechaNacimiento = $_POST['fecha_nacimiento'];
-    $telefono = $_POST['telefono'];
-    // $motivoConsulta = $_POST["horaconsulta"];
+    $horaconsulta = $_POST['horaconsulta'];
+    $fecha_consulta = $_POST["fecha_consulta"];
 
     // Crear la conexión a la base de datos
     $conn = new mysqli("localhost", "root", "", "consultoriofisioterapia");
@@ -35,15 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    $sql = "INSERT INTO pacientes (primernombre, segundonombre, primerapellido, segundoapellido, direccion, lugardenacimiento, ocupacion, ci, estadocivil, edad, sexo, horaconsulta, fecha_consulta, fecha_nacimiento, telefono) VALUES ('$primernombre', '$segundonombre', '$primerapellido', '$segundoapellido', '$direccion', '$lugardenacimiento', '$ocupacion', ' $ci', '$estadocivil', '$edad', '$sexo', '$horadeconsulta', '$fechaConsulta', '$fechaNacimiento', '$telefono')";
+    $sql = "INSERT INTO pacientes (primernombre, segundonombre, primerapellido, segundoapellido, ci, horaconsulta, fecha_consulta) 
+    VALUES ('$primernombre', '$segundonombre', '$primerapellido', '$segundoapellido', ' $ci', '$horaconsulta', '$fecha_consulta')";
 
 
     if ($conn->query($sql) === TRUE) {
         echo "Paciente agregado exitosamente.";
         echo "<script>
                 setTimeout(function() {
-                    window.location.href = 'index.php';
-                }, 3000); // Redireccionar después de 3 segundos (3000 ms)
+                    window.location.href = '../../secciones/pacientes/index.php';
+                }, 0000); // Redireccionar después de 3 segundos (3000 ms)
               </script>";
     } else {
         echo "Error al agregar el paciente: " . $conn->error;
@@ -95,26 +86,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="mb-3">
           <label for="ci" class="form-label">CI</label>
           <input type="text"
-            class="form-control" name="segundoapellido" id="ci" aria-describedby="helpId" placeholder="12345678">
+            class="form-control" name="ci" id="ci" aria-describedby="helpId" placeholder="12345678">
         </div>
 
         <div class="mb-3">
           <label for="horaconsulta" class="form-label">Hora de consulta</label>
-          <input type="time" class="form-control" name="horadeconsulta" id="horadeconsulta" aria-describedby="emailHelpId" placeholder="Hora de consulta">
+          <input type="time" class="form-control" name="horaconsulta" id="horaconsulta" aria-describedby="emailHelpId" placeholder="Hora de consulta">
         </div>
 
         <div class="mb-3">
-          <label for="fechadeconsulta" class="form-label">Fecha de consulta</label>
-          <input type="date" class="form-control" name="fechadeconsulta" id="fechadeconsulta" aria-describedby="emailHelpId" placeholder="Hora de consulta">
+          <label for="fecha_consulta" class="form-label">Fecha de consulta</label>
+          <input type="date" class="form-control" name="fecha_consulta" id="fecha_consulta" aria-describedby="emailHelpId" placeholder="Fecha de consulta">
         </div>
 
         <button type="submit" class="btn btn-success">Agregar Paciente</button>
-        <a name="" id="" class="btn btn-primary" href="index.php" role="button">Cancelar</a>
+        <a name="" id="" class="btn btn-primary" href="../../secciones/pacientes/index.php" role="button">Cancelar</a>
 
     </form>
 
-    </div>
+    <!-- </div>
     <div class="card-footer text-muted"></div>
-</div>
+</div> -->
 
 <?php include ("../../templates/footer.php"); ?>

@@ -2,7 +2,9 @@
 include ("../../templates/header.php"); 
 include ("conexion.php");
 
-$id = $_GET['id']; // Variable for historial ID
+$id = $_GET['id'];
+//$id2 = $POST['id'];
+// Variable for historial ID
 // $id_consultorio = $_GET['id']; // Variable for consultorio ID
 
 $sql = "SELECT * FROM historial WHERE id = $id";
@@ -17,9 +19,13 @@ $resultado = $con->query($sql);
 <br/>
 <h1>Historial</h1>
 <a name="" id="" class="btn btn-primary" 
-        href="crear.php" role="button">
+href="../../secciones/historial/crear.php" role="button">
 
         Agregar Historial
+    </a>
+    <a name="" id="" class="btn btn-primary" 
+    href="../../secciones/consultas/formconsultas.php"  role="button">
+        Agregar consulta
     </a>
 </br>
 </br>
@@ -41,6 +47,7 @@ $resultado = $con->query($sql);
                 <th scope="col">Segundo nombre</th>
                 <th scope="col">Primer apellido</th>
                 <th scope="col">Segundo apellido</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -50,6 +57,7 @@ $resultado = $con->query($sql);
                 <td><?php echo $row['segundonombre'] ?></td>
                 <td><?php echo $row['primerapellido'] ?></td>
                 <td><?php echo $row['segundoapellido'] ?></td>
+
 
             </tr>
         </tbody>
@@ -128,7 +136,7 @@ $resultado = $con->query($sql);
                 <td scope="row"><?php echo $row['hereditariosyfamiliares'] ?></td>
                 <td><?php echo $row['personalespatologicos'] ?></td>
                 <td><?php echo $row['personalesnopatologicos'] ?></td>
-        <?php } ?>
+
             </tr>
         </tbody>
     </table>
@@ -137,10 +145,15 @@ $resultado = $con->query($sql);
 
     </div>
 </div>
-
-</br>
-
 <?php include ("../../secciones/consultas/index.php"); ?>
+</br>
+<?php } ?>
+
+<!-- <a name="" id="" class="btn btn-info" 
+        href="../../secciones/consultas/index.php" role="button">
+
+        Consultas
+    </a> -->
 
 
 <a name="" id="" class="btn btn-info" 

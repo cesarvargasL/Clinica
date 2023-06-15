@@ -24,7 +24,20 @@ $url_base="http://localhost/Clinica/";
   </header>
 
   <nav class="navbar navbar-expand navbar-light bg-light">
-        <ul class="nav navbar-nav">
+  <style>
+  .navbar {
+    background-color: #b695c0 !important;
+  }
+  .navbar .nav-link {
+      color: #004548;
+    }
+  /* nav.navbar ul.nav li {
+
+    color: orange
+} */
+/* Implementacion del estilo */
+</style>      
+  <ul class="nav navbar-nav">
             <li class="nav-item">
                 <a class="nav-link active" href="<?php echo $url_base;?>secciones/sistema/index.php" aria-current="page">Inicio<span class="visually-hidden">(current)</span></a>
             </li>

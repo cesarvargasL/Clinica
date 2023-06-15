@@ -25,7 +25,8 @@ $resultado = $con->query($sql);
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Nombre</th>
+            <th scope="col">Identificación</th>
+                <th scope="col">Nombre Completo</th>
                 <th scope="col">CI</th>
                 <!-- <th scope="col">Fotos</th> -->
                 <th scope="col">Fecha de Consulta</th>
@@ -38,7 +39,11 @@ $resultado = $con->query($sql);
         <tbody>
         <?php while ($row = $resultado->fetch_assoc()) {?>
             <tr class="">
-                <td scope="row"><?php echo $row['primernombre'] ?> </td>
+            <td scope="row"><?php echo $row['id'] ?>
+                <td><?php echo $row['primernombre'] ?>
+                <?php echo $row['segundonombre'] ?> 
+                <?php echo $row['primerapellido'] ?> 
+                <?php echo $row['segundoapellido'] ?>  </td>
                 <td><?php echo $row['ci'] ?></td>
                 <!-- <td>imagen.jpg</td> -->
                 <td><?php echo $row['fecha_consulta'] ?></td>
@@ -46,7 +51,7 @@ $resultado = $con->query($sql);
                  
                 <td>
                     <a name="" id="" class="btn btn-primary" href="../../secciones/historial/index.php?id=<?php echo $row['id']; ?>" role="button">Historial</a>
-                    <a name="" id="" class="btn btn-info" href="../../secciones/pacientes/editar.php?id=<?php echo $row['id']; ?>" role="button">Editar</a>
+                    <a name="" id="" class="btn btn-primary" href="../../secciones/pacientes/editar.php?id=<?php echo $row['id']; ?>" role="button">Editar</a>
                     <a name="" id="" class="btn btn-danger" href="../../secciones/pacientes/delete.php?id=<?php echo $row['id']; ?>" role="button">Eliminar</a></td>
         <?php } ?>
 

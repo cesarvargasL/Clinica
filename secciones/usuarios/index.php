@@ -39,7 +39,7 @@ $resultado = $conn->query($sql);
                             // echo "<td>" . $row['contrasena'] . "</td>";
                             echo "<td>" . $row['correo'] . "</td>";
                             ?><td>
-                                    <a name="btneditar" id="btneditar" class="btn btn-info" href="../../secciones/usuarios/editar.php?id=<?php echo $row['id']; ?>" role="button">Editar</a>
+                                    <a name="btneditar" id="btneditar" class="btn btn-primary" href="../../secciones/usuarios/editar.php?id=<?php echo $row['id']; ?>" role="button">Editar</a>
                                     <a name="btnborrar" id="btnborrar" class="btn btn-danger" href="../../secciones/usuarios/delete.php?id=<?php echo $row['id']; ?>" role="button">Eliminar</a>
                                   </td>
                              </tr>

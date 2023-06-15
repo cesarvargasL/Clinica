@@ -69,7 +69,7 @@ $resultado = $con->query($sql);
                 <td scope="row"><?php echo $row['medicamentos'] ?></td>
                 <td><?php echo $row['radiografias'] ?></td>
                 <td>
-                    <a name="" id="" class="btn btn-primary" href="../../secciones/consultas/crear.php" role="button">Agregar consulta</a>
+                    <a name="" id="" class="btn btn-primary" href="../../secciones/consultas/formconsultas.php" role="button">Agregar consulta</a>
                     <?php } ?>
             </tr>
             
